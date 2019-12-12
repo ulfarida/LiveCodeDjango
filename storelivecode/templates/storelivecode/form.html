@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+Input Barang
+{% endblock %}
+
+{% block nav-header %}
+<ul class="list-unstyled home-header-nav__list">
+    <li><a href="{% url 'index' %}">Home</a></li>
+    <li class="list_about">Input Barang</li>
+</ul>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row align-items-center items">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <form action="{% url 'tambah_barang' %}" method="post">
+                {% csrf_token %}
+                <div class="form-group form-input">
+                    <label for="nama">Nama Barang</label>
+                    <input class="form-control" type="text" name="nama" id="nama">
+                </div>
+                <div class="form-group form-input">
+                    <label for="harga">Harga</label>
+                    <input class="form-control" type="text" name="harga" id="harga">
+                <div class="form-group form-input">
+                    <label for="deskripsi">Deskripsi Barang</label>
+                    <textarea class="form-control" name="deskripsi" id="deskripsi" cols="30" rows="10"></textarea>
+                </div>
+                <div class="form-group form-input">
+                    <label for="picture">Link Gambar</label>
+                    <input class="form-control" type="text" name="picture" id="picture">
+                </div>
+                </div>
+                <div class="form-group submit-form">
+                    <input type="submit" name="submit_form" id="" value="Input Barang">
+                </div>
+            </form>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+</div>
+{% endblock %}

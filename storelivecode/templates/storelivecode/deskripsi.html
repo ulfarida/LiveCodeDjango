@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+Deskripsi Barang
+{% endblock %}
+
+{% block nav-header %}
+<ul class="list-unstyled home-header-nav__list">
+    <li><a href="{% url 'index' %}">Home</a></li>
+    <li><a href="{% url 'input_barang' %}">Input Barang</a></li>
+</ul>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row align-items-center items">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <div class="listbarang-desc">
+                <img src="{{barang.picture}}" alt="">
+                <h5>{{barang.nama}}</h5>
+                <p>{{barang.harga}}</p>
+                <p>Deskripsi produk :</p>
+                <p>{{barang.deskripsi}}</p>
+            </div>  
+        </div>
+    </div>
+    <div class="row align-items-center kembali">
+        <a href="{% url 'index' %}">Kembali</a>
+    </div>
+</div>
+{% endblock %}
